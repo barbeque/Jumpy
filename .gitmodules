@@ -1,0 +1,3 @@
+[submodule "hibachi"]
+	path = hibachi
+	url = git@github.com:barbeque/hibachi.git
