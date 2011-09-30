@@ -9,7 +9,7 @@ drawLightning = function(context, x1, y1, x2, y2) {
 	var distancePerFork = distance(x1, y1, x2, y2) / (forks + 1);
 	
 	for(var i = 0; i < forks; i++) {
-		newAngle = Math.floor(Math.random() * 400) / 10.0;
+		newAngle = Math.floor(Math.random() * 100) / 10.0;
 		
 		if(i % 2 == 1) {
 			currentAngle -= newAngle;
