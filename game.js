@@ -4,8 +4,10 @@ var keyboard;
 
 var interval = 1000/20; // 20 fps
 
-var imagePaths = [ 'assets/block.png' ];
+var imagePaths = [ "assets/block.png" ];
 var images = new Array();
+
+var t = 0;
 
 /// game entry point
 main = function() {
@@ -15,9 +17,9 @@ main = function() {
 	keyboard = new Keyboard();
 	
 	// load images
-	for(path in imagePaths) {
+	for(key in imagePaths) {
 		streamedImage = new StreamedImage();
-		streamedImage.image.src = path;
+		streamedImage.image.src = imagePaths[key];
 		images.push(streamedImage);
 	}
 	
@@ -27,10 +29,14 @@ main = function() {
 /// game step method
 step = function() {
 	var seconds = interval / 1000.0;
+	t += seconds;
 	
 	// Wipe screen
 	context.save();
 	context.fillStyle = "black";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.restore();
+	
+	// Draw test image
+	images[0].draw(context, 64 + (t * 8), 64, 16, 16);
 }
