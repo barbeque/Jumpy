@@ -4,7 +4,7 @@ var keyboard;
 
 var interval = 1000/20; // 20 fps
 
-var imagePaths = [ "assets/block.png" ];
+var imagePaths = [ "assets/block.png", "assets/grass.png", "assets/dirt.png", "assets/stalactite.png" ];
 var images = new Array();
 
 var t = 0;
@@ -39,4 +39,11 @@ step = function() {
 	
 	// Draw test image
 	images[0].draw(context, 64 + (t * 8), 64, 16, 16);
+	
+	// Draw a strip of test images
+	for(var x = 0; x <= canvas.width; x += 16) {
+		images[1].draw(context, x, canvas.height - 48, 16, 16);
+		images[2].draw(context, x, canvas.height - 32, 16, 16);
+		images[3].draw(context, x, canvas.height - 16, 16, 16);
+	}
 }
