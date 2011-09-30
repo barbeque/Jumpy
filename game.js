@@ -37,8 +37,14 @@ step = function() {
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.restore();
 	
+	// Draw lightning coming from the block because we're awesome
+	var x = (64 + (t * 12)) % canvas.width;
+	attackY = canvas.height - 48;
+	attackX = Math.floor(Math.random() * (canvas.width + 1));
+	drawLightning(context, x + 8, 64 + 8, attackX, attackY);
+	
 	// Draw test image
-	images[0].draw(context, 64 + (t * 8), 64, 16, 16);
+	images[0].draw(context, x, 64, 16, 16);
 	
 	// Draw a strip of test images
 	for(var x = 0; x <= canvas.width; x += 16) {
