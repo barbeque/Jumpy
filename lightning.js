@@ -21,7 +21,7 @@ drawLightning = function(context, x1, y1, x2, y2) {
 		newX = (Math.sin(degToRad(currentAngle % 360)) * distancePerFork) + currentX;
 		newY = (Math.cos(degToRad(currentAngle % 360)) * distancePerFork) + currentY;
 		
-		if(Math.floor(Math.random() * 6) == 3) {
+		if(Math.floor(Math.random() * 6) >= 3) {
 			// Add extra flair with another fork
 			forkX = Math.sin(degToRad(Math.floor(Math.random() * 360))) * distancePerFork + currentX;
 			forkY = Math.cos(degToRad(Math.floor(Math.random() * 360))) * distancePerFork + currentY;
